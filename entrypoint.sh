@@ -10,7 +10,7 @@ rm -rf /var/lib/apt/lists/*
 cd /root
 wget https://www.factorio.com/get-download/2.0.55/headless/linux64 -O ./factrioserver.tar.xz
 unxz ./factrioserver.tar.xz
-tar -xvf ./factrioserver.tar.xz
+tar -xvf ./factrioserver.tar
 
 # replace mods-list.json
 wget https://raw.githubusercontent.com/sakkuntyo/docker-factorio-server/refs/heads/2.0.55/mod-list.json -O ./vanila-mod-list.json
