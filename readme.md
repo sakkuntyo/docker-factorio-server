@@ -1,3 +1,3 @@
 ブランチでfactorioバージョンを分けてます。
 
-バニラでそのまま接続できないので、dockerfile には mods-list を編集する工程が含まれます。
+バニラではそのまま接続できないので、Entrypoint.sh には mods-list.json を置き換える工程が含まれます。
