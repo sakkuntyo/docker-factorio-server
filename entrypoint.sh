@@ -3,7 +3,8 @@
 set -e
 
 # pre install
-apt update;apt install xz-utils wget
+apt update;apt install xz-utils wget -y
+rm -rf /var/lib/apt/lists/*
 
 # install 
 cd /root
@@ -21,4 +22,4 @@ cd /root/factorio/bin/x64
 test -f /root/factoriodata/mysave.zip && echo "not initialized because exist root/factoriodata/mysave.zip. " || ./factorio --create /root/factoriodata/mysave
 
 # launch
-./factorio --start-server /root/corekeeperdata/mysave.zip
+exec ./factorio --start-server /root/corekeeperdata/mysave.zip
