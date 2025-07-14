@@ -15,6 +15,7 @@ tar -xvf ./factrioserver.tar
 # replace mods-list.json
 wget https://raw.githubusercontent.com/sakkuntyo/docker-factorio-server/refs/heads/2.0.55/mod-list.json -O ./vanila-mod-list.json
 cat ./vanila-mod-list.json
+mkdir -p /root/factorio/mods/
 cp ./vanila-mod-list.json /root/factorio/mods/mod-list.json
 
 # post install
