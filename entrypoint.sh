@@ -24,10 +24,10 @@ test -f /root/factrioserver.tar || {
 }
 
 # post install
+cd /root/factorio/bin/x64
 test -f /root/factoriodata/mysave.zip || {
   echo "not exist /root/factoriodata/mysave.zip"
   echo "start create save data"
-  cd /root/factorio/bin/x64
   test -f /root/factoriodata/mysave.zip && echo "not initialized, because exist root/factoriodata/mysave.zip. " || ./factorio --create /root/factoriodata/mysave
 }
 
