@@ -11,13 +11,13 @@ cd /root
 test -f /root/factrioserver.tar || {
   echo "not exist /root/factrioserver.tar"
   echo "start install"
-  wget https://www.factorio.com/get-download/latest/headless/linux64 -O ./factrioserver.tar.xz 
+  wget https://www.factorio.com/get-download/2.0.60/headless/linux64 -O ./factrioserver.tar.xz 
   unxz ./factrioserver.tar.xz
   tar -xvf ./factrioserver.tar
 
   # replace mods-list.json
   echo "replace mods-list.json for vanilla"
-  wget https://raw.githubusercontent.com/sakkuntyo/docker-factorio-server/refs/heads/latest/mod-list.json -O ./vanila-mod-list.json
+  wget https://raw.githubusercontent.com/sakkuntyo/docker-factorio-server/refs/heads/2.0.60/mod-list.json -O ./vanila-mod-list.json
   cat ./vanila-mod-list.json
   mkdir -p /root/factorio/mods/
   cp ./vanila-mod-list.json /root/factorio/mods/mod-list.json
