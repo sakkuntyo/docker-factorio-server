@@ -8,13 +8,15 @@ rm -rf /var/lib/apt/lists/*
 
 # install 
 test -f /root/factrioserver.tar || {
+  echo "not exist /root/factrioserver.tar"
+  echo "start install"
   cd /root
-  test -f /root/factrioserver.tar
   wget https://www.factorio.com/get-download/2.0.55/headless/linux64 -O ./factrioserver.tar.xz 
   unxz ./factrioserver.tar.xz
   tar -xvf ./factrioserver.tar
 
   # replace mods-list.json
+  echo "replace mods-list.json for vanilla"
   wget https://raw.githubusercontent.com/sakkuntyo/docker-factorio-server/refs/heads/2.0.55/mod-list.json -O ./vanila-mod-list.json
   cat ./vanila-mod-list.json
   mkdir -p /root/factorio/mods/
@@ -23,6 +25,8 @@ test -f /root/factrioserver.tar || {
 
 # post install
 test -f /root/factoriodata/mysave.zip || {
+  echo "not exist /root/factoriodata/mysave.zip"
+  echo "start create save data"
   cd /root/factorio/bin/x64
   test -f /root/factoriodata/mysave.zip && echo "not initialized, because exist root/factoriodata/mysave.zip. " || ./factorio --create /root/factoriodata/mysave
 }
