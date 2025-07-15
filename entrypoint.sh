@@ -7,10 +7,10 @@ apt update;apt install xz-utils wget -y
 rm -rf /var/lib/apt/lists/*
 
 # install 
+cd /root
 test -f /root/factrioserver.tar || {
   echo "not exist /root/factrioserver.tar"
   echo "start install"
-  cd /root
   wget https://www.factorio.com/get-download/2.0.55/headless/linux64 -O ./factrioserver.tar.xz 
   unxz ./factrioserver.tar.xz
   tar -xvf ./factrioserver.tar
